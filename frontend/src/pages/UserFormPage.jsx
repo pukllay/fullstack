@@ -58,14 +58,13 @@ export function UserFormPage(){
         <input type="text" name="" id="" placeholder="Nombre"
         {...register("first_name", {required: true})}
         />
-        {errors.first_name && <span>first_name is required</span> }
-        <textarea rows="3" name="" id="" placeholder="apellido"
-        {...register("last_name", {required:true})}
-        ></textarea>
+        <input type="text" name="" id="" placeholder="apellido"
+        {...register("last_name", {required: true})}
+        />
         <input type="email" name="" id="" placeholder="correo"
         {...register("email", {required: true})}
         />
-        <input type="date" name="" id="" 
+        <input type="text" name="" id="" placeholder="edad"
         {...register("age", {required: true})}
         />
 
