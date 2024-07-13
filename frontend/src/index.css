@@ -5,3 +5,8 @@ body {
 a{
   color:aliceblue;
 }
+form{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}

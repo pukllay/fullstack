@@ -7,10 +7,10 @@ export function UserCard({user}){
           navigate(`/user/${user.id}`)
         }}
       >
-        <h1>{user.first_name}</h1>
-        <p>{user.last_name}</p>
-        <p>{user.email}</p>
-        <p>{user.age}</p>
+        <p><b>Nombre:</b> {user.first_name}</p>
+        <p><b>Apellido:</b> {user.last_name}</p>
+        <p><b>Correo:</b> {user.email}</p>
+        <p><b>Edad:</b> {user.age}</p>
         <hr />
       </div>
   )
