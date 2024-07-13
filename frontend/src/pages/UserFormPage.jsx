@@ -64,17 +64,23 @@ export function UserFormPage(){
         <input type="email" name="" id="" placeholder="correo"
         {...register("email", {required: true})}
         />
-        <input type="text" name="" id="" placeholder="edad"
-        {...register("age", {required: true})}
+        <input type="text" placeholder="Edad"
+          {...register("age", {
+            required: true,
+            validate: value => value >= 0 && value <= 150 || "La edad debe ser un número entre 0 y 150"
+          })}
         />
-
-        {errors.last_name && <span>EL NOMBRE ESTÁ REPETIDO</span> }
-        <button>GUARDAR</button>
+        {errors.first_name && <span>El nombre es requerido</span>}
+        {errors.last_name && <span>El apellido es requerido</span>}
+        {errors.email && <span>El correo es requerido</span>}
+        {errors.age && <span>{errors.age.message}</span>}
+        <button>Guardar</button>
+      
       </form>
       {params.id && (
         <button
           onClick={async () =>{
-            const accepted = window.confirm("ESTA SEGURO?");
+            const accepted = window.confirm("¿ESTA SEGURO?");
             if (accepted){
               await deleteUser(params.id);
               toast.success('usuario eliminado', {
